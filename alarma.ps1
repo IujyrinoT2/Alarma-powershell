@@ -6,10 +6,10 @@ $time = [int]$time
 $time = $time * 100 + [int](get-date -format "mm")
 Write-Output "$time`n"
 
-$alarmtime = 100
+$alarmtime = 800
 Write-Output "$alarmtime`n"
 
-while ( $time -lt $alarmtime ) {
+while ( $time -ne $alarmtime ) {
     $time = get-date -format "HH"
 $time = [int]$time
 $time = $time * 100 + [int](get-date -format "mm")
@@ -19,6 +19,7 @@ $time = $time * 100 + [int](get-date -format "mm")
 
     if ( $time -eq $alarmtime ) {
         Write-Output "YES"
+        start-process "https://www.youtube.com/watch?v=Ds14zhfHEvE"
     }
     else {
         Write-Output "CE PULA MEA"
